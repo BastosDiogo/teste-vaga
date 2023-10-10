@@ -12,7 +12,7 @@
         <p class="mensangem" >Produto deletado.</p>
     {% else %}
     {% endif %}
-    <form method="POST" action="/usuario-alterado-sucesso">
+    <form method="POST" action="{% url 'deletar_produto' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>

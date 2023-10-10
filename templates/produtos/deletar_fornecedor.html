@@ -12,7 +12,7 @@
         <p class="mensangem" >Fornecedor deletado.</p>
     {% else %}
     {% endif %}
-    <form method="DELETE" action="/empresa-alterada-sucesso">
+    <form method="DELETE" action="{% url 'deletar_fornecedor' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>
