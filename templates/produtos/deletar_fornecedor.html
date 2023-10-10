@@ -1,0 +1,29 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Alterar Empresa</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    {% if alterar %}
+        <p class="mensangem" >Fornecedor deletado.</p>
+    {% else %}
+    {% endif %}
+    <form method="DELETE" action="/empresa-alterada-sucesso">
+        {% csrf_token %}
+        <table class="tabela_dados">
+            <tr>
+                <td class="campo_tabela">CNPJ:</td>
+            </tr>
+            <tr>
+                <td class="campo_tabela_2">
+                    <input class="form-control" type="text" name="cnpj" pattern="([0-9.-]+)" placeholder="00.000.000/0000-00" minlength="18" maxlength="18" required onkeypress="$(this).mask('00.000.000/0000-00');">
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_4" type="submit">Enviar</button></p>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Produtos Cadastrados</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="empresas">
+    {% if alterar %}
+        <p class="mensangem" >Produto criado com sucesso</p>
+    {% else %}
+    {% endif %}
+    <table class="tabela_dados">
+        <tr>
+            <td class="linha_tabela_busca_cabecario">ID</td>
+            <td class="linha_tabela_busca_cabecario">Nome Produto</td>
+            <td class="linha_tabela_busca_cabecario">Categoria</td>
+            <td class="linha_tabela_busca_cabecario">Descricao</td>
+        </tr>
+        <tr>
+        {%if produtos %}
+            {% for produto in produtos %}
+            <td class="linha_tabela_busca">{{ produto.id }}</td>
+            <td class="linha_tabela_busca">{{ produto.nome }}</td>
+            <td class="linha_tabela_busca">{{ produto.categoria }}</td>
+            <td class="linha_tabela_busca">{{ produto.descricao }}</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+    </table>
+</div>
+{% endblock %}

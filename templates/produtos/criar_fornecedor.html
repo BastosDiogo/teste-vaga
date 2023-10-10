@@ -1,0 +1,42 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Criação de Fornecedor</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    <form method="POST" action="/empresa-criada-sucesso">
+        {% csrf_token %}
+        <table class="tabela_dados">
+            <tr>
+                <td class="linha_tabela_busca_cabecario_3">Nome Fantasia:</td>
+                <td class="linha_tabela_busca_cabecario_3">Razão Social:</td>
+                <td class="linha_tabela_busca_cabecario_3">CNPJ:</td>
+                <td class="linha_tabela_busca_cabecario_3">Telefone:</td>
+                <td class="linha_tabela_busca_cabecario_3">Endereço:</td>
+            </tr>
+            <tr>
+                <td class="campo_fornecedor_3">
+                    <input class="form-control" type="text" name="fornecedor" required>
+                </td>
+                <td class="campo_fornecedor_3">
+                    <input class="form-control" type="text" name="razao_social" required>
+                </td>
+                <td class="campo_fornecedor_3">
+                    <input class="form-control" type="text" name="cnpj" pattern="([0-9.-]+)" placeholder="00.000.000/0000-00" minlength="18" maxlength="18" required onkeypress="$(this).mask('00.000.000/0000-00');">
+                </td>
+                <td class="campo_fornecedor_3">
+                    <input class="form-control" type="text" name="telefone" pattern="([0-9.-]+)" placeholder="(21) 988322665" minlength="12" maxlength="12" required onkeypress="$(this).mask('(21)99999-9999');">
+                </td>
+                <td class="campo_fornecedor_3">
+                    <textarea rows="4" cols="10" class="form_endereco" type="text" name="endereco"></textarea>
+                </td>
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_2" type="submit">Enviar</button></p>
+    </form>
+</div>
+{% endblock %}

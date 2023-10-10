@@ -1,0 +1,29 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Alterar Usuários</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    {% if alterar %}
+        <p class="mensangem" >Produto deletado.</p>
+    {% else %}
+    {% endif %}
+    <form method="POST" action="/usuario-alterado-sucesso">
+        {% csrf_token %}
+        <table class="tabela_dados">
+            <tr>
+                <td class="campo_tabela">Nome do Produto:</td>
+            </tr>
+            <tr>
+                <td class="campo_tabela_2">
+                    <input class="form-control" type="text" name="nome_produto" required>
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_4" type="submit">Enviar</button></p>
+    </form>
+</div>
+{% endblock %}
