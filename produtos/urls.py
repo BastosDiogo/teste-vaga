@@ -1,8 +1,24 @@
 from django.urls import path
-from produtos.views import index, alterar_fornecedor
+from produtos.views import (
+    index,
+    alterar_fornecedor,
+    alterar_produto,
+    buscar_fornecedores,
+    buscar_produtos,
+    criar_fornecedor,
+    criar_produto,
+    deletar_fornecedor,
+    deletar_produto,
+)
 
 urlpatterns = [
     path('', index, name='index'),
-    path('alterar-fornecedor/', alterar_fornecedor, name='alterar_fornecedor')
-    # path('imagem/', imagem, name='imagem')
+    path('alterar-fornecedor/', alterar_fornecedor, name='alterar_fornecedor'),
+    path('alterar-produto/', alterar_produto, name='alterar_produto'),
+    path('buscar-fornecedores/', buscar_fornecedores, name='buscar_fornecedores'),
+    path('buscar-produtos/', buscar_produtos, name='buscar_produtos'),
+    path('criar-produto/', criar_produto, name='criar_produto'),
+    path('criar-fornecedor/', criar_fornecedor, name='criar_fornecedor'),
+    path('deletar-produto/', deletar_produto, name='deletar_produto'),
+    path('deletar-fornecedor/', deletar_fornecedor, name='deletar_fornecedor'),
 ]

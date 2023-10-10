@@ -192,6 +192,7 @@ select {
 
 .form-control {
     display: inline-block;
+    vertical-align: top;
     text-align: center;
     /* background: rgb(0, 0, 0); */
     /* width: 20%; */
@@ -201,7 +202,52 @@ select {
     border: 1px solid #ccc;
     font-family: Arial, Helvetica, sans-serif;
 }
-  
+
+
+.form-control_2 {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    /* background: rgb(0, 0, 0); */
+    width: 150px;
+    font-size: 17px;
+    height: 25px;
+    margin-bottom: 10px;
+    color: #555;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.form_descricao_produto {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    white-space: pre-line;
+    width: 700px;
+    /* width: 30px; */
+    height: 100px;
+    margin-bottom: 10px;
+    color: #555;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_descricao_produto_2 {
+    vertical-align: top;
+    /* display: inline-block; */
+    text-align: center;
+    white-space: pre-line;
+    width: 400px;
+    /* width: 30px; */
+    height: 100px;
+    margin-bottom: 10px;
+    color: #555;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .enviar {
 display: flex;
 justify-content: center;
@@ -299,7 +345,7 @@ padding-left: 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 5px;
     padding-left: 10%;
 }
@@ -329,14 +375,14 @@ padding-left: 40px;
   padding-left: 7%;
 }
 
-.tabela_empresas {
+.tabela_dados {
   /* position: absolute; */
   display: block;
   /* padding-right: 50px; */
   text-align: center;
 }
 
-.linha_tabela_empresas_cabecario {
+.linha_tabela_dados_cabecario {
   padding-left: 150px;
   padding-top: 15px;
   padding-bottom: 30px;
@@ -346,7 +392,7 @@ padding-left: 40px;
   text-align: center;
 }
 
-.linha_tabela_empresas {
+.linha_tabela_dados {
   padding-left: 170px;
   padding-bottom: 12px;
   font-size: 20px;
@@ -355,31 +401,22 @@ padding-left: 40px;
 }
 
 /* -------------------------------- */
-.tabela_empresas_2 {
-    padding-top: 7%;
-    padding-left: 22%;
-    font-size: 15px;
-    font-weight: bold;
+.tabela_dados_2 {
     font-family: Arial, Helvetica, sans-serif;
-    /* position: absolute; */
-    /* display:inline; */
-    /* padding-right: 50px; */
-    /* text-align: center; */
-    /* color: aqua; */
   }
   
-  .linha_tabela_empresas_cabecario_2 {
+  .linha_tabela_dados_cabecario_2 {
     padding-left: 150px;
-    padding-top: 15px;
-    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 15px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
   }
   
-  .linha_tabela_empresas_2 {
-    padding-left: 170px;
+  .linha_tabela_dados_2 {
+    padding-left: 150px;
     padding-bottom: 12px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -387,7 +424,7 @@ padding-left: 40px;
   }
 /* -------------------------------- */
 
-.linha_tabela_usuarios_cabecario {
+.linha_tabela_busca_cabecario {
     padding-left: 60px;
     padding-top: 15px;
     padding-bottom: 30px;
@@ -396,8 +433,9 @@ padding-left: 40px;
     font-weight: bold;
     text-align: center;
   }
-  
-  .linha_tabela_usuarios {
+
+
+.linha_tabela_busca {
     padding-left: 60px;
     /* background-color: aquamarine; */
     padding-bottom: 20px;
@@ -420,14 +458,14 @@ padding-left: 40px;
 
 .cricao_usuario_titulo {
     /* background-color: aquamarine; */
-    padding-top: 7%;
+    padding-top: 5%;
     padding-left: 22%;
     font-size: 15px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.campo_usuario {
+.campo_tabela {
     /* display: inline; */
     text-align: center;
     /* text-align: justify; */
@@ -438,8 +476,9 @@ padding-left: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
   
-.campo_usuario_2 {
+.campo_tabela_2 {
     /* display: block; */
+    vertical-align: top;
     text-align: center;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -466,6 +505,42 @@ padding-left: 40px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.linha_tabela_busca_cabecario_3 {
+    vertical-align: top;
+    padding-left: 6px;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.form_endereco {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    white-space: pre-line;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 10px;
+    color: #555;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.campo_fornecedor_3 {
+    /* display: block; */
+    vertical-align: top;
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .botao_2{
     /* display: inline-block; */
@@ -500,7 +575,7 @@ padding-left: 40px;
     /* display: inline-block; */
     text-align: center;
     padding: 6px 12px;
-    margin-right: 27%;
+    margin-left: 3%;
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: normal;

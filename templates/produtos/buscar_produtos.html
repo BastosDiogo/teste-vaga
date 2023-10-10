@@ -5,28 +5,26 @@
     <h1 class="texto_tabela">Produtos Cadastrados</h1>
 </div>
 
-{% include 'menu_site.html' %}
+{% include 'produtos/menu_site.html' %}
 <div class="empresas">
     {% if alterar %}
         <p class="mensangem" >Produto criado com sucesso</p>
     {% else %}
     {% endif %}
-    <table class="tabela_empresas">
+    <table class="tabela_dados">
         <tr>
-            <td class="linha_tabela_usuarios_cabecario">ID</td>
-            <td class="linha_tabela_usuarios_cabecario">Nome Usuário</td>
-            <td class="linha_tabela_usuarios_cabecario">Login</td>
-            <td class="linha_tabela_usuarios_cabecario">Nível de Acesso</td>
-            <td class="linha_tabela_usuarios_cabecario">Função</td>
+            <td class="linha_tabela_busca_cabecario">ID</td>
+            <td class="linha_tabela_busca_cabecario">Nome Produto</td>
+            <td class="linha_tabela_busca_cabecario">Categoria</td>
+            <td class="linha_tabela_busca_cabecario">Descricao</td>
         </tr>
         <tr>
         {%if produtos %}
             {% for produto in produtos %}
-            <td class="linha_tabela_usuarios">{{ produto.id }}</td>
-            <td class="linha_tabela_usuarios">{{ produto.nome }}</td>
-            <td class="linha_tabela_usuarios">{{ produto.login }}</td>
-            <td class="linha_tabela_usuarios">{{ produto.nivel_acesso }}</td>
-            <td class="linha_tabela_usuarios">{{ produto.funcao.capitalize() }}</td>
+            <td class="linha_tabela_busca">{{ produto.id }}</td>
+            <td class="linha_tabela_busca">{{ produto.nome }}</td>
+            <td class="linha_tabela_busca">{{ produto.categoria }}</td>
+            <td class="linha_tabela_busca">{{ produto.descricao }}</td>
         </tr>
         {% endfor %}
         {% else %}

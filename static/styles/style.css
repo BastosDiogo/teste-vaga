@@ -329,14 +329,14 @@ padding-left: 40px;
   padding-left: 7%;
 }
 
-.tabela_empresas {
+.tabela_dados {
   /* position: absolute; */
   display: block;
   /* padding-right: 50px; */
   text-align: center;
 }
 
-.linha_tabela_empresas_cabecario {
+.linha_tabela_dados_cabecario {
   padding-left: 150px;
   padding-top: 15px;
   padding-bottom: 30px;
@@ -346,7 +346,7 @@ padding-left: 40px;
   text-align: center;
 }
 
-.linha_tabela_empresas {
+.linha_tabela_dados {
   padding-left: 170px;
   padding-bottom: 12px;
   font-size: 20px;
@@ -355,7 +355,7 @@ padding-left: 40px;
 }
 
 
-.linha_tabela_usuarios_cabecario {
+.linha_tabela_busca_cabecario {
     padding-left: 60px;
     padding-top: 15px;
     padding-bottom: 30px;
@@ -365,7 +365,7 @@ padding-left: 40px;
     text-align: center;
   }
   
-  .linha_tabela_usuarios {
+  .linha_tabela_busca {
     padding-left: 60px;
     /* background-color: aquamarine; */
     padding-bottom: 20px;
@@ -395,7 +395,7 @@ padding-left: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.campo_usuario {
+.campo_tabela {
     /* display: inline; */
     text-align: center;
     /* text-align: justify; */
@@ -406,7 +406,7 @@ padding-left: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
   
-.campo_usuario_2 {
+.campo_tabela_2 {
     /* display: block; */
     text-align: center;
     padding-left: 10px;

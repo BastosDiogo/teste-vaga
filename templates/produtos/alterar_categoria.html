@@ -3,7 +3,7 @@
 {% block conteudo %}
 
 <div class="titlo_tabela">
-    <h1 class="texto_tabela">Alterar Fornecedor</h1>
+    <h1 class="texto_tabela">Alterar Categoria</h1>
 </div>
 
 {% include 'produtos/menu_site.html' %}
@@ -11,7 +11,7 @@
     <form method="GET" action="/alterar-fornecedor/">
         {% csrf_token %}
         {% if alterar %}
-            <p class="mensangem" >Fornecedor alterado com sucesso</p>
+            <p class="mensangem" >Categoria alterada com sucesso</p>
         {% else %}
         {% endif %}
         <table class="tabela_dados">
@@ -28,18 +28,18 @@
 </div>
 <div class="tabela_dados_2">
     <table>
-        <form method="GET" action="/alterar-fornecedor/">
+        <form method="GET" action="/alterar-categoria/">
             {% csrf_token %}
             <tr>
-                <td class="linha_tabela_dados_cabecario_2">Telefone</td>
-                <td class="linha_tabela_dados_cabecario_2">Endereço</td>
+                <td class="linha_tabela_dados_cabecario_2">Nome categoria</td>
+                <td class="linha_tabela_dados_cabecario_2">Área de atução</td>
             </tr>
             <tr>
                 <td class="linha_tabela_dados_2">
-                    <input class="form-control" type="text" name="telefone" pattern="([0-9.-]+)" placeholder="(99) 999999999" minlength="12" maxlength="12" required onkeypress="$(this).mask('(21)99999-9999');">
+                    <input class="form-control" placeholder="XPTO LTDA" type="text" name="categoria" required>
                 </td>
                 <td class="linha_tabela_dados_2">
-                    <textarea rows="4" cols="10" class="form_endereco" type="text" name="endereco"></textarea>
+                    <input class="form-control" placeholder="Energia Eólica" type="text" name="categoria" required>
                 </td>
             </tr>
         </form>
