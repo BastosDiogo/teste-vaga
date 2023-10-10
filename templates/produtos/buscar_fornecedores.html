@@ -1,0 +1,27 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">GET: Empresas Cadastradas</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="empresas">
+    {% if alterar %}
+        <p class="mensangem" >Fornecedor criado com sucesso</p>
+    {% else %}
+    {% endif %}
+    <table class="tabela_empresas">
+        <tr>
+            <td class="linha_tabela_empresas_cabecario">Nome empresa</td>
+            <td class="linha_tabela_empresas_cabecario">CNPJ</td>
+            <td class="linha_tabela_empresas_cabecario">Área de atução</td>
+        </tr>
+        <tr>
+            <td class="linha_tabela_empresas">XPTO LTDA</td>
+            <td class="linha_tabela_empresas">99.999.999/0001-99</td>
+            <td class="linha_tabela_empresas">Energia Eólica</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

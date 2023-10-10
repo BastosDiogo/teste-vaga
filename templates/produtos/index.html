@@ -1,0 +1,18 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="form-usuario">
+    <ul>
+        <li>
+            <h2 class="usuario-titulo">Por favor insira os dados solicitados:</h2>
+        </li>
+        <li>
+            <form method="POST" action="/dashbord-empresas">
+                <p class="usuario"><label>Login:</label> <input class="form-control" type="text" name="login" required></p>
+                <p class="usuario_2"><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+                <p class="enviar"><button class="botao" type="submit">Enviar</button></p>
+            </form>
+        </li>
+    </ul>
+</div>
+{% endblock %}

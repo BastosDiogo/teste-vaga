@@ -1,0 +1,43 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Alterar Fornecedor</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    <form method="GET" action="/alterar-fornecedor/">
+        {% csrf_token %}
+        {% if alterar %}
+            <p class="mensangem" >Fornecedor alterado com sucesso</p>
+        {% else %}
+        {% endif %}
+        <table class="tabela_empresas">
+            <tr>
+                <td class="campo_usuario">CNPJ:</td>
+            </tr>
+            <tr>
+                <td class="campo_usuario_2">
+                    <input class="form-control" type="text" name="cnpj" pattern="([0-9.-]+)" placeholder="00.000.000/0000-00" minlength="18" maxlength="18" required onkeypress="$(this).mask('00.000.000/0000-00');">
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_4" type="submit">Buscar</button></p>
+    </form>
+</div>
+<div class="tabela_empresas_2">
+    <table>
+        <tr>
+            <td class="linha_tabela_empresas_cabecario_2">Nome empresa</td>
+            <td class="linha_tabela_empresas_cabecario_2">CNPJ</td>
+            <td class="linha_tabela_empresas_cabecario_2">Área de atução</td>
+        </tr>
+        <tr>
+            <td class="linha_tabela_empresas_2">XPTO LTDA</td>
+            <td class="linha_tabela_empresas_2">99.999.999/0001-99</td>
+            <td class="linha_tabela_empresas_2">Energia Eólica</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

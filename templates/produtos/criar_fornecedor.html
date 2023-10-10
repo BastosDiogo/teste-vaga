@@ -1,0 +1,33 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Criação de Empresas</h1>
+</div>
+
+{% include 'menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    <form method="POST" action="/empresa-criada-sucesso">
+        <table class="tabela_empresas">
+            <tr>
+                <td class="campo_criacao_empresa">Nome empresa:</td>
+                <td class="campo_criacao_empresa">CNPJ:</td>
+                <td class="campo_criacao_empresa">Área de Atualção:</td>
+            </tr>
+            <tr>
+                <td class="campo_empresa_2">
+                    <input class="form-control" type="text" name="empresa" required>
+                </td>
+                <td class="campo_empresa_2">
+                    <input class="form-control" type="text" name="cnpj" pattern="([0-9.-]+)" placeholder="00.000.000/0000-00" minlength="18" maxlength="18" required onkeypress="$(this).mask('00.000.000/0000-00');">
+                </td>
+                <td class="campo_empresa_2">
+                    <input class="form-control" type="text" name="area_atuacao" required>
+                </td>
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_2" type="submit">Enviar</button></p>
+    </form>
+</div>
+{% endblock %}
