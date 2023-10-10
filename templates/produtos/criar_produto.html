@@ -1,0 +1,38 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Criação de Produtos</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    <form method="POST" action="/usuario-criado-sucesso">
+        {% csrf_token %}
+        <table class="tabela_dados">
+            <tr>
+                <td class="campo_tabela">Nome Produto:</td>
+                <td class="campo_tabela">Categoria:</td>
+                <td class="campo_tabela">Descrição do Produto:</td>
+            </tr>
+            <tr>
+                <td class="campo_tabela_2">
+                    <input class="form-control" type="text" name="nome" minlength="5" maxlength="200" required>
+                </td>
+                <td class="campo_tabela_2">
+                    <select class="form-control" name="categoria" required>
+                        <option value="0">Aço</option>
+                        <option value="1">Madeira</option>
+                        <option value="2">Metal</option>
+                    </select>
+                </td>
+                <td class="campo_tabela_2">
+                    <textarea rows="4" cols="10" class="form_descricao_produto" type="text" name="descricao"></textarea>
+                </td>
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_3" type="submit">Enviar</button></p>
+    </form>
+</div>
+{% endblock %}

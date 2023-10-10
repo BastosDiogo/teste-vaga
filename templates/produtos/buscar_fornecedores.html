@@ -1,0 +1,31 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Fornecedores Cadastradas</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="empresas">
+    {% if alterar %}
+        <p class="mensangem" >Fornecedor criado com sucesso</p>
+    {% else %}
+    {% endif %}
+    <table class="tabela_dados">
+        <tr>
+            <td class="linha_tabela_busca_cabecario">Nome Fantasia</td>
+            <td class="linha_tabela_busca_cabecario">Razão Social</td>
+            <td class="linha_tabela_busca_cabecario">Telefone</td>
+            <td class="linha_tabela_busca_cabecario">CNPJ</td>
+            <td class="linha_tabela_busca_cabecario">Endereço</td>
+        </tr>
+        <tr>
+            <td class="linha_tabela_busca">XPTO Fantasia</td>
+            <td class="linha_tabela_busca">XPTO Fantasia LTDA</td>
+            <td class="linha_tabela_busca">21 99999-9999</td>
+            <td class="linha_tabela_busca">99.999.999/0001-99</td>
+            <td class="linha_tabela_busca">Avenida Cinco de Julho</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

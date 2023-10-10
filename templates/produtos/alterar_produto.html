@@ -1,0 +1,54 @@
+{% extends "produtos/template.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="titlo_tabela">
+    <h1 class="texto_tabela">Alterar Produto</h1>
+</div>
+
+{% include 'produtos/menu_site.html' %}
+<div class="cricao_usuario_titulo">
+    <form method="GET" action="/alterar-produto/">
+        {% csrf_token %}
+        {% if alterar %}
+            <p class="mensangem" >Produto alterado com sucesso</p>
+        {% else %}
+        {% endif %}
+        <table class="tabela_dados">
+            <tr>
+                <td class="campo_tabela">Produto:</td>
+            </tr>
+            <tr>
+                <td class="campo_tabela_2">
+                    <input class="form-control" type="text" name="produto" placeholder="Nome do produto" minlength="5" maxlength="200" required>
+            </tr>
+        </table>
+        <p class="enviar"><button class="botao_4" type="submit">Buscar</button></p>
+    </form>
+</div>
+<div class="tabela_dados_2">
+    <table>
+        <form method="GET" action="/alterar-fornecedor/">
+            {% csrf_token %}
+            <tr>
+                <td class="linha_tabela_dados_cabecario_2">Nome Produto</td>
+                <td class="linha_tabela_dados_cabecario_2">Nova Categoria</td>
+                <td class="linha_tabela_dados_cabecario_2">Descrição</td>
+            </tr>
+            <tr>
+                <td class="linha_tabela_dados_2">Chave de fenda</td>
+                <td class="linha_tabela_dados_2">
+                    <select class="form-control_2" name="categoria" required>
+                        <option value="0">Aço</option>
+                        <option value="1">Madeira</option>
+                        <option value="2">Metal</option>
+                    </select>
+                </td>
+                <td class="linha_tabela_dados_2">
+                    <textarea rows="4" cols="10" class="form_descricao_produto_2" type="text" name="descricao"></textarea>
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+{% endblock %}
