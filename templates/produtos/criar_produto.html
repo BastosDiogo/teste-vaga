@@ -8,7 +8,7 @@
 
 {% include 'produtos/menu_site.html' %}
 <div class="cricao_usuario_titulo">
-    <form method="POST" action="/usuario-criado-sucesso">
+    <form method="POST" action="{% url 'buscar_produtos' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>
