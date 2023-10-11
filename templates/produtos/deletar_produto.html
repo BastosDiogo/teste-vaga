@@ -8,9 +8,8 @@
 
 {% include 'produtos/menu_site.html' %}
 <div class="cricao_usuario_titulo">
-    {% if alterar %}
-        <p class="mensangem" >Produto deletado.</p>
-    {% else %}
+    {%if mensagem %}
+    <p class="mensangem">{{ mensagem }}</p>
     {% endif %}
     <form method="POST" action="{% url 'deletar_produto' %}">
         {% csrf_token %}
@@ -23,7 +22,7 @@
                     <input class="form-control" type="text" name="nome_produto" required>
             </tr>
         </table>
-        <p class="enviar"><button class="botao_4" type="submit">Enviar</button></p>
+        <p class="enviar"><button class="botao_4" type="submit">Deletar</button></p>
     </form>
 </div>
 {% endblock %}

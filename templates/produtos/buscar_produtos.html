@@ -13,20 +13,18 @@
     {% endif %}
     <table class="tabela_dados">
         <tr>
-            <td class="linha_tabela_busca_cabecario">ID</td>
-            <td class="linha_tabela_busca_cabecario">Nome Produto</td>
-            <td class="linha_tabela_busca_cabecario">Categoria</td>
-            <td class="linha_tabela_busca_cabecario">Descricao</td>
+            <td class="linha_tabela_busca_cabecario_produto">Nome Produto</td>
+            <td class="linha_tabela_busca_cabecario_produto">Categoria</td>
+            <td class="linha_tabela_busca_cabecario_produto">Descricao</td>
         </tr>
         <tr>
         {%if produtos %}
             {% for produto in produtos %}
-            <td class="linha_tabela_busca">{{ produto.id }}</td>
-            <td class="linha_tabela_busca">{{ produto.nome }}</td>
-            <td class="linha_tabela_busca">{{ produto.categoria }}</td>
-            <td class="linha_tabela_busca">{{ produto.descricao }}</td>
+            <td class="linha_tabela_busca_produto">{{ produto.nome }}</td>
+            <td class="linha_tabela_busca_produto">{{ produto.categoria }}</td>
+            <td class="linha_tabela_busca_produto">{{ produto.descricao }}</td>
         </tr>
-        {% endfor %}
+            {% endfor %}
         {% else %}
         {% endif %}
     </table>

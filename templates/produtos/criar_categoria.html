@@ -8,7 +8,10 @@
 
 {% include 'produtos/menu_site.html' %}
 <div class="cricao_usuario_titulo">
-    <form method="POST" action="{% url 'buscar_categorias' %}">
+    {%if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'criar_categoria' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>
