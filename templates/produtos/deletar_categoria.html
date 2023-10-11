@@ -8,11 +8,10 @@
 
 {% include 'produtos/menu_site.html' %}
 <div class="cricao_usuario_titulo">
-    {% if alterar %}
-        <p class="mensangem" >Fornecedor deletado.</p>
-    {% else %}
+    {%if mensagem %}
+    <p class="mensangem">{{ mensagem }}</p>
     {% endif %}
-    <form method="DELETE" action="{% url 'deletar_categoria' %}">
+    <form method="POST" action="{% url 'deletar_categoria' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>
@@ -23,7 +22,7 @@
                     <input class="form-control" type="text" name="categoria" placeholder="categoria" minlength="5" maxlength="18">
             </tr>
         </table>
-        <p class="enviar"><button class="botao_4" type="submit">Enviar</button></p>
+        <p class="enviar"><button class="botao_4" type="submit">Deletar</button></p>
     </form>
 </div>
 {% endblock %}

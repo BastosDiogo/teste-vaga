@@ -13,19 +13,16 @@
     {% endif %}
     <table class="tabela_dados">
         <tr>
-            <td class="linha_tabela_busca_cabecario">Nome Fantasia</td>
-            <td class="linha_tabela_busca_cabecario">Razão Social</td>
-            <td class="linha_tabela_busca_cabecario">Telefone</td>
-            <td class="linha_tabela_busca_cabecario">CNPJ</td>
-            <td class="linha_tabela_busca_cabecario">Endereço</td>
+            <td class="linha_tabela_busca_cabecario">Categorias</td>
         </tr>
         <tr>
-            <td class="linha_tabela_busca">XPTO Fantasia</td>
-            <td class="linha_tabela_busca">XPTO Fantasia LTDA</td>
-            <td class="linha_tabela_busca">21 99999-9999</td>
-            <td class="linha_tabela_busca">99.999.999/0001-99</td>
-            <td class="linha_tabela_busca">Avenida Cinco de Julho</td>
+            {%if categorias %}
+                {% for categoria in categorias %}
+            <td class="linha_tabela_busca">{{ categoria.nome_categoria }}</td>
         </tr>
+            {% endfor %}
+        {% else %}
+        {% endif %}
     </table>
 </div>
 {% endblock %}
