@@ -7,7 +7,7 @@ class Categoria(models.Model):
     def __str__(self):
         return f"{self.nome_categoria}".upper()
 
-    def categoria(self):
+    def __rep__(self):
         return str(self.nome_categoria).lower()
 
 
@@ -30,7 +30,7 @@ class Produtos(models.Model):
     data_cadastro = models.DateTimeField(blank=False, auto_now=True, null=False)
     data_atualizacao = models.DateTimeField(blank=False, auto_now=True, null=False)
     fornecedores = models.ForeignKey(Fornecedor,on_delete=models.CASCADE)
-    descricao = models.CharField(max_length=600)
+    descricao = models.CharField(max_length=600, blank=True, null=True)
 
     def __str__(self):
         return f"{self.nome}".capitalize()
