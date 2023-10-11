@@ -20,12 +20,17 @@
             <td class="linha_tabela_busca_cabecario">Endereço</td>
         </tr>
         <tr>
-            <td class="linha_tabela_busca">XPTO Fantasia</td>
-            <td class="linha_tabela_busca">XPTO Fantasia LTDA</td>
-            <td class="linha_tabela_busca">21 99999-9999</td>
-            <td class="linha_tabela_busca">99.999.999/0001-99</td>
-            <td class="linha_tabela_busca">Avenida Cinco de Julho</td>
+        {%if fornecedores %}
+            {% for fornecedor in fornecedores %}
+            <td class="linha_tabela_busca">{{ fornecedor.nome_fantasia }}</td>
+            <td class="linha_tabela_busca">{{ fornecedor.razao_social }}</td>
+            <td class="linha_tabela_busca">{{ fornecedor.cnpj }}</td>
+            <td class="linha_tabela_busca">{{ fornecedor.telefone }}</td>
+            <td class="linha_tabela_busca">{{ fornecedor.endereco }}</td>
         </tr>
+            {% endfor %}
+        {% else %}
+        {% endif %}
     </table>
 </div>
 {% endblock %}

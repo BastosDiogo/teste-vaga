@@ -8,12 +8,16 @@
 
 {% include 'produtos/menu_site.html' %}
 <div class="cricao_usuario_titulo">
-    <form method="POST" action="{% url 'buscar_produtos' %}">
+    {%if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'criar_produto' %}">
         {% csrf_token %}
         <table class="tabela_dados">
             <tr>
                 <td class="campo_tabela">Nome Produto:</td>
                 <td class="campo_tabela">Categoria:</td>
+                <td class="campo_tabela">Fornecedor:</td>
                 <td class="campo_tabela">Descrição do Produto:</td>
             </tr>
             <tr>
@@ -21,12 +25,31 @@
                     <input class="form-control" type="text" name="nome" minlength="5" maxlength="200" required>
                 </td>
                 <td class="campo_tabela_2">
+                {%if lista_de_categorias %}
                     <select class="form-control" name="categoria" required>
-                        <option value="0">Aço</option>
-                        <option value="1">Madeira</option>
-                        <option value="2">Metal</option>
+                        {% for categoria in lista_de_categorias %}
+                        <option value="{{categoria}}">{{categoria}}</option>
+                        {% endfor %}
                     </select>
+                    {% else %}
+                    <select class="form-control" name="categoria">
+                        <option value="0">Crie ao menos 1 categoria</option>
+                    </select>
+                    {% endif %}
                 </td>
+                <td class="campo_tabela_2">
+                    {%if lista_de_fornecedores %}
+                        <select class="form-control" name="fornecedores" required>
+                            {% for fornecedor in lista_de_fornecedores %}
+                            <option value="{{fornecedor}}">{{fornecedor}}</option>
+                            {% endfor %}
+                        </select>
+                        {% else %}
+                        <select class="form-control" name="fornecedores">
+                            <option value="0">Crie ao menos 1 fornecedor</option>
+                        </select>
+                        {% endif %}
+                    </td>
                 <td class="campo_tabela_2">
                     <textarea rows="4" cols="10" class="form_descricao_produto" type="text" name="descricao"></textarea>
                 </td>
