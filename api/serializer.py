@@ -23,3 +23,8 @@ class FornecedorSerializers(serializers.ModelSerializer):
     class Meta:
         model = Fornecedor
         fields = '__all__'
+
+class ListaFornecedoreSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Fornecedor
+        fields = '__all__'
