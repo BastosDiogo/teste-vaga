@@ -1,0 +1,32 @@
+README
+Aplicativo: Catálogo de Produtos
+Essa aplicação simula um sistema de Catálogo de Produtos, e com endpoints para consumo externo.
+
+Requisitos
+Python 3.8 ou superior
+
+Instalação
+Clone o repositório:
+git clone https://github.com/BastosDiogo/teste-vaga.git
+
+Crie um ambiente virtual e ative-o:
+python3 -m venv venv
+* Linux: source venv/bin/activate  
+* Windows: .\venv\Scripts\activate
+
+Instale as dependências:
+pip install -r requirements.txt
+
+Variáveis de ambiente:
+Podem ser encontrada no link abaixo "https://drive.google.com/file/d/1ja2SpEONSIaH_wTEzDN5HaJd7XiKmriu/view?usp=drive_link"
+
+Inicie a aplicação:
+Utilizar o comando "manage.py runserver" no terminal
+* Incializar como WEB:
+    http://localhost:8000/
+
+* Como documentação da API:
+    http://localhost:8000/api/
+
+Licença:
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para detalhes.
