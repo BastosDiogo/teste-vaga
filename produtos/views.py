@@ -40,11 +40,12 @@ def criar_produto(request):
         categoria = request.POST.get('categoria')
         descricao = request.POST.get('descricao')
         fornecedores = request.POST.get('fornecedores')
-        Categoria(nome_categoria='nome_categoria')
+        cnpj = Fornecedor.objects.filter(razao_social=fornecedores).all()
+
         novo_produto = Produtos(
             nome=str(nome).upper(),
-            categoria=str(categoria).upper(),
-            fornecedores=str(fornecedores).upper(),
+            categoria_id=str(categoria).upper(),
+            fornecedores_id=str(cnpj[0].cnpj),
             descricao=descricao
         )
         novo_produto.save()
